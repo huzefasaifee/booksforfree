@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1 col-xs-1">
+            <button type="button" class="btn btn-link" routerLink="/home"><img
+                    src='../assets/drawable-hdpi/ic_left_arrow.png'></button>
+        </div>
+        <div class="col-sm-1 col-xs-1" class='searchbook'><img src='../assets/drawable-hdpi/ic_search.png'></div>
+        <div class="col-sm-8 col-xs-8">
+            <input [(ngModel)]='searchValue' class="form-control mr-sm-2" type="search" placeholder="Search" #searchBox
+                id="search-box" aria-label="Search" (input)="search(searchBox.value)" />
+        </div>
+        <div *ngIf="searchValue != ''" class="col-sm-2 col-xs-2" class="cancel" (click)="clear()">
+            {{cancel | uppercase}}
+        </div>
+    </div>
+</div>
+<div class="mainbody">
+    <div class="container">
+
+        <div class="container" (scroll)="scrollHandler($event)">
+            <div class="row">
+                <div class="col title">
+                    {{bookCategory|uppercase}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4" id="book" *ngFor="let b of booksDisplay" (click)="openBook(b)">
+                    <div class="container" style="height: 100%;">
+                        <div class="row" style="height: 100%;">
+                            <div class="col-sm-12" style="height: 80%;" class="w-100 p-3" id='book-img'
+                                [ngStyle]="{ 'background-image': 'url(' + b.formats['image/jpeg']+ ')', 'background-repeat': 'no-repeat','background-size':'cover'}">
+                            </div>
+                            <div class="col-sm-12" class="booktitle" class="w-100 p-3" id='book-title'>{{b.title}}</div>
+                            <div class="col-sm-12" style="height: 10%;" class="w-100 p-3" *ngIf="b.authors.length > 0"
+                                id='book-author'>{{b.authors[0].name}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

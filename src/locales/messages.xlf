@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3780942b3d9c33a280fc8442804f3f1dd2df7a12" datatype="html">
+        <source>Under Construction!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Title for the under construction card</note>
+        <note priority="1" from="meaning">Card Header</note>
+      </trans-unit>
+      <trans-unit id="759ea2ba9a5657ff91e357e15186b3ed5d565463" datatype="html">
+        <source>This page is under construction.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">A description for the under construction card.</note>
+        <note priority="1" from="meaning">Card Descritpion</note>
+      </trans-unit>
+      <trans-unit id="974ca97299e6f0ee0d85e7f8ffd0402949cb60ae" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{obj.bookCategory | uppercase }}"/></source>
+        <target></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bookcategory/bookcategory.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

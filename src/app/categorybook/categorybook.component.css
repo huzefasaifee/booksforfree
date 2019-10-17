@@ -1,0 +1,51 @@
+#book{
+    height: 550px;
+}
+
+#book-img{
+    border-radius: 10px;
+}
+
+.mainbody{
+background-color: var(--text-color);;
+}
+
+#search-box{
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: none;
+}
+
+.cancel{
+  color:var(--text-color);
+}
+
+#previous{
+border: none;
+  opacity: 0;
+  background-color: var(--background-color);
+}
+
+
+
+.searchbook{
+  /* margin-left: -15px; */
+  margin-top: 10px;
+}
+
+.title{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:blue;
+  font-weight: bold;
+}
+
+#book-title{
+  height: 10%; 
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  text-overflow: clip
+}
+
+#book-author{
+  text-overflow: clip;
+}

@@ -1,0 +1,20 @@
+<div class="container" id='title'>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            {{title}}
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row name" *ngFor='let obj of list'>
+        <div class="col" routerLink="/books/{{obj.bookCategory}}">
+            <button style="font-weight:600;" type="button" class="btn item1">{{obj.bookCategory | uppercase }}</button>
+            <span class='arrow'>
+                <img src='../assets/drawable-hdpi/ic_right_arrow.png'>
+            </span>
+
+        </div>
+
+    </div>
+</div>
