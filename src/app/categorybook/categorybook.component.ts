@@ -1,12 +1,9 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
-import { Category } from '../category';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../category.service';
 import { Location } from '@angular/common';
-import { Book1 } from '../Book';
 import { BookList } from '../BookList';
 import { list } from '../mock-bookcategory';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-categorybook',
@@ -14,12 +11,9 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./categorybook.component.css']
 })
 export class CategorybookComponent implements OnInit {
-  // @Input()
-  // bookCategory:Category;
 
   constructor(private route: ActivatedRoute,
-    private bookService: CategoryService,
-    private location: Location) { this.searchValue = ""; }
+    private bookService: CategoryService) { this.searchValue = ""; }
 
   searchValue: string;
   bookCategory: any;
@@ -29,14 +23,13 @@ export class CategorybookComponent implements OnInit {
   previous: string;
   booksDisplay: any;
   booksSearch: any;
-  // booksSearchNext: string;
-  // booksSearchPrevious: string;
   booksImage: any;
   cancel:string;
   ngOnInit() {
     this.book = ["1", "2", "3", "4"];
     this.booksCategory = list.results;
     this.booksDisplay = list.results;
+    console.log('ngOnInit')
     this.booksSearch = list.results;
     this.getCategory();
     this.getBooksCategory();
@@ -51,7 +44,8 @@ export class CategorybookComponent implements OnInit {
     this.bookService.getBooksCategory(this.bookCategory).subscribe((result: BookList) => {
       this.booksCategory = result.results;
       this.booksDisplay = this.booksCategory;
-      console.log(this.booksDisplay);
+      
+      console.log('getBooksCategory');
       this.next = result.next;
       this.previous = result.previous;
     });
@@ -63,7 +57,7 @@ export class CategorybookComponent implements OnInit {
     if (value != '') {
       clearTimeout(this.time);
 
-      this.time = setTimeout(() => {    //<<<---    using ()=> syntax
+      this.time = setTimeout(() => {
         this.getBooksSearch(value);
       }, 1000);
 
@@ -75,6 +69,7 @@ export class CategorybookComponent implements OnInit {
 
   private resetBooksDisplay() {
     this.booksDisplay = this.booksCategory;
+    console.log('resetBooksDisplay')
   }
 
   getBooksSearch(value) {
@@ -89,7 +84,7 @@ export class CategorybookComponent implements OnInit {
         this.next = result.next;
         this.previous = result.previous;
       }
-      console.log(this.booksDisplay);
+      console.log('getBooksSearch');
 
     });
 
@@ -102,16 +97,6 @@ export class CategorybookComponent implements OnInit {
     let html = false;
     let pdf = false;
     let txt = false;
-    // switch (b.mediatype) {
-    //   case "Text":
-    //     {
-    //       break;
-    //     }
-    //   default:
-    //     {
-    //       break;
-    //     }
-    // }
     if (b.formats.hasOwnProperty('text/html; charset=utf-8') == true) {
       
       if(b.formats['text/html; charset=utf-8'].search('zip') == -1){
@@ -148,20 +133,14 @@ export class CategorybookComponent implements OnInit {
     }
   }
 
-  // getBooksWithCoverImage() {
-  //   this.bookService.getBooksWithCoverImage('image/jpeg').subscribe((result: BookList) => {
-  //     this.booksImage = result.results;
-  //     //this.booksDisplay = this.booksCategory;
-  //     //console.log(this.booksDisplay);
-  //   });
-
-  // }
   @HostListener('window:scroll', ['$event'])
   scrollHandler(event) {
-    //console.debug("Scroll Event"+event);
 
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       // you're at the bottom of the page
+      console.log('(window.innerHeight '+window.innerHeight);
+      console.log('window.scrollY '+ window.scrollY);
+      console.log('document.body.offsetHeight '+document.body.offsetHeight);
       console.log("you're at the bottom of the page" + event);
       this.getMoreBooks();
     }
@@ -177,7 +156,7 @@ export class CategorybookComponent implements OnInit {
         });
         console.log('booksCategory after' + this.booksCategory.length);
         this.booksDisplay = this.booksCategory;
-        console.log('getMoreBooks' + this.booksDisplay);
+        console.log('getMoreBooks');
         this.next = result.next;
         this.previous = result.previous;
       });
@@ -186,9 +165,5 @@ export class CategorybookComponent implements OnInit {
   clear() {
     this.searchValue = "";
     this.resetBooksDisplay();
-  }
-
-  gotoPrevious() {
-
   }
 }

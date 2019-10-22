@@ -4,6 +4,7 @@
 
 #book-img{
     border-radius: 10px;
+    height: 80%;
 }
 
 .mainbody{
@@ -14,10 +15,15 @@ background-color: var(--text-color);;
   background-color: var(--background-color);
   color: var(--text-color);
   border: none;
+  font-family: Calibri Light;
+  font-weight: 500;
 }
 
 .cancel{
   color:var(--text-color);
+  font-family: var(--font-family-search);
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 #previous{
@@ -29,23 +35,28 @@ border: none;
 
 
 .searchbook{
-  /* margin-left: -15px; */
   margin-top: 10px;
 }
 
 .title{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-family-category);
   color:blue;
-  font-weight: bold;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 #book-title{
-  height: 10%; 
   font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-  text-overflow: clip
+  font-family: var(--font-family-category);
+  text-overflow: clip;
+  text-transform: uppercase;
 }
 
 #book-author{
   text-overflow: clip;
+}
+
+#search-box::placeholder{
+  color: #9691ef;
+  font-weight: bold;
 }

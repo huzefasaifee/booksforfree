@@ -4,6 +4,9 @@
     --background-color: #5e57e7;
     --text-color: white;
     --secondary-color:#4e4bcb;
+    --font-family-title: Comic Sans MS;
+    --font-family-category:Calibri;
+    --font-family-search:Calibri Light;
   }
  
   body {

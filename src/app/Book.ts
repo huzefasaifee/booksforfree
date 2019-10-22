@@ -1,4 +1,5 @@
 import { Author } from './Author';
+import { Format } from './Format';
 
 export class Book1{
     id: number;
@@ -9,6 +10,6 @@ export class Book1{
     languages: string[]=[];
     copyright: boolean;
     media_type: string;
-    formats:string[]=[];
+    formats:Format;
     download_count: number
   }

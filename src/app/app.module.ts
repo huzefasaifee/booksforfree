@@ -7,6 +7,9 @@ import { BookcategoryComponent } from './bookcategory/bookcategory.component';
 import { CategorybookComponent } from './categorybook/categorybook.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -8,20 +8,17 @@
     margin-bottom: 30px;
     color: var(--text-color);
     background-color:var(--background-color);
+    font-family: var(--font-family-title);
 }  
 
 .item1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-family-category);
     color:var(--text-color);
-    /* margin: 10px 10px; */
     background-color: #4e4bcb;
-    /* width: 100%; */
-    /* height: 100%; */
 }
 
 .arrow{
     float: right;
-    /* background-color: blueviolet; */
     height: 100%;
 }
 
